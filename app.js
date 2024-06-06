@@ -4,10 +4,6 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
 const app = express();
-// const port = 3000;
-
-// In-memory data store (replace with a database for production)
-let tasks = [];
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -15,6 +11,9 @@ const swaggerOptions = {
       title: "Task Management API",
       version: "1.0.0",
       description: "A simple API for managing tasks",
+    },
+    servers: {
+      url: "http://localhost:3000",
     },
   },
   apis: ["./routes/*.js"], // Path to your API routes
